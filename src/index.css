@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', ui-monospace, monospace;
+
+  --color-bg: oklch(12% 0.01 275);
+  --color-surface: oklch(16% 0.01 275);
+  --color-surface-hover: oklch(19% 0.012 275);
+  --color-surface-raised: oklch(22% 0.012 275);
+  --color-border: oklch(24% 0.01 275);
+  --color-border-subtle: oklch(20% 0.008 275);
+
+  /* Primary text slightly brighter; secondary/tertiary lifted for comfortable reading on dark surfaces */
+  --color-text: oklch(96% 0.006 275);
+  --color-text-secondary: oklch(78% 0.012 275);
+  --color-text-tertiary: oklch(62% 0.014 275);
+
+  --color-accent: oklch(65% 0.25 275);
+  --color-accent-hover: oklch(72% 0.22 275);
+  --color-accent-muted: oklch(25% 0.06 275);
+
+  --color-win: oklch(17% 0.025 150);
+  --color-win-pill-bg: oklch(28% 0.06 150);
+  --color-win-pill-text: oklch(78% 0.15 150);
+
+  --color-loss: oklch(17% 0.025 25);
+  --color-loss-pill-bg: oklch(28% 0.06 25);
+  --color-loss-pill-text: oklch(78% 0.15 25);
+
+  --color-inconclusive: oklch(17% 0.02 85);
+  --color-inconclusive-pill-bg: oklch(28% 0.06 85);
+  --color-inconclusive-pill-text: oklch(78% 0.12 85);
+
+  --color-pending: oklch(16.5% 0.015 240);
+  --color-pending-pill-bg: oklch(26% 0.05 240);
+  --color-pending-pill-text: oklch(75% 0.12 240);
+
+  --color-running-pill-bg: oklch(26% 0.06 275);
+  --color-running-pill-text: oklch(75% 0.18 275);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.7);
+  opacity: 0.5;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23777' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px !important;
+}
+
+input, select, textarea {
+  color-scheme: dark;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(30% 0.01 275);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(40% 0.01 275);
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "functions": {
+    "api/meta/creatives.ts": {
+      "maxDuration": 120
+    },
+    "api/cron/sync.ts": {
+      "maxDuration": 800
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/sync",
+      "schedule": "0 */12 * * *"
+    }
+  ]
+}
